@@ -25,6 +25,8 @@ end
 if Loaded then
     Notify({Title = "ERROR", Description = "Script is already loaded.", Duration = 3})
     return
+else
+    Loaded = true
 end
 
 --// UI Libary Variables
