@@ -9,13 +9,22 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 --// Variables
+local NotifyLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))()
+local Notify = NotifyLibrary.Notify
 local LocalPlayer = Players.LocalPlayer
+local Loaded = false
 
 --// Check if game is loaded
 if not game:IsLoaded() then
     repeat
         wait()
     until game:IsLoaded()
+end
+
+--// Check if already loaded
+if Loaded then
+    Notify({Title = "ERROR", Description = "Script is already loaded.", Duration = 3})
+    return
 end
 
 --// UI Libary Variables
