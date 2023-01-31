@@ -1,4 +1,5 @@
 --// Note: I'm honestly confused why people obsfucate this shit lol, took me under 5 minutes to make this xd.
+
 --// Services
 local VirtualUser = game:GetService("VirtualUser")
 local Workspace = game:GetService("Workspace")
