@@ -1,5 +1,7 @@
 --// Note: I'm honestly confused why people obsfucate this shit lol, took me under 5 minutes to make this xd.
 
+--// Loadstring version: loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/MonkeyTycoon.lua", true))();
+
 --// Services
 local VirtualUser = game:GetService("VirtualUser")
 local Workspace = game:GetService("Workspace")
