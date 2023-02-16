@@ -5,6 +5,17 @@
 
 ]]--
 
+-- // Await until game is fully loaded
+repeat wait() until game:IsLoaded()
+repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
+
+-- // Services
+local Players = game:GetService("Players")
+
+-- // Variables
+local NotificationLibary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua", true))();
+local Notification = NotificationLibary.Notify
+
 -- // Flagged ANTI Cheat Remotes
 local flagged_remotes = {
     "TeleportDetect",
