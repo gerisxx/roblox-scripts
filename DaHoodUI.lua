@@ -5,6 +5,12 @@
 
 ]]--
 
+-- // Keybind Settings
+getgenv().EmoteKeybinds = {
+    ["Lay"] = Enum.KeyCode.X,
+    ["Greet"] = Enum.KeyCode.C,
+}
+
 -- // Await until game is fully loaded
 repeat wait() until game:IsLoaded()
 repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
@@ -62,7 +68,22 @@ Sky.SkyboxLf = "http://www.roblox.com/asset/?id=393845750"
 Sky.SkyboxRt = "http://www.roblox.com/asset/?id=393845533"
 Sky.SkyboxUp = "http://www.roblox.com/asset/?id=393845287"
 
--- // Destroying the annoying ads
+-- // Destroying the annoying ADs
 Workspace.ForwardPortal:Destroy()
+
+-- // Disabling Seats
+for _, v in pairs(Workspace:GetDescendants()) do
+    if v:IsA("Seat") then
+        v.Disabled = true
+    end
+end
+
+-- // Destroying Pickups
+for _, v in pairs(Workspace.Ignored.ItemsDrop:GetChildren()) do
+    v:Destroy()
+end
+
+-- // Destroying PepperSpray Affect
+Lighting.PepperSprayBlur:Destroy()
 
 -- // Finishing later babes
