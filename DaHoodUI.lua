@@ -71,6 +71,9 @@ Sky.SkyboxUp = "http://www.roblox.com/asset/?id=393845287"
 -- // Destroying the annoying ADs
 Workspace.ForwardPortal:Destroy()
 
+-- // Destroying PepperSpray Affect
+Lighting.PepperSprayBlur:Destroy()
+
 -- // Disabling Seats
 for _, v in pairs(Workspace:GetDescendants()) do
     if v:IsA("Seat") then
@@ -82,8 +85,5 @@ end
 for _, v in pairs(Workspace.Ignored.ItemsDrop:GetChildren()) do
     v:Destroy()
 end
-
--- // Destroying PepperSpray Affect
-Lighting.PepperSprayBlur:Destroy()
 
 -- // Finishing later babes
