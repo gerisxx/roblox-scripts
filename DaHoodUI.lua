@@ -1,15 +1,12 @@
 --[[
 
-    TBH i just wanted to fix and add some features da hood didnt have already.
-    Open-Source XD :3
+    This script will stop annoying shit from breaking your macro
+    
+    Loadstring Version:
+    
 
 ]]--
 
--- // Keybind Settings
-getgenv().EmoteKeybinds = {
-    ["Lay"] = Enum.KeyCode.X,
-    ["Greet"] = Enum.KeyCode.C,
-}
 
 -- // Await until game is fully loaded
 repeat wait() until game:IsLoaded()
@@ -24,49 +21,12 @@ local VirtualUser = game:GetService("VirtualUser")
 -- // Variables
 local LocalPlayer = Players.LocalPlayer
 
--- // Libarys
-local NotificationLibary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua", true))();
-local Notification = NotificationLibary.Notify
-
 -- // ANTI AFK
 LocalPlayer.Idled:Connect(function()
     VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
     task.wait(1)
     VirtualUser:Button2Up(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
 end)
-
--- // Flagged ANTI Cheat Remotes
-local flagged_remotes = {
-    "TeleportDetect",
-    "CHECKER_1",
-    "CHECKER_2",
-    "OneMoreTime",
-    "VirusCough",
-    "BreathingHAMON",
-}
-
--- // ANTI Cheat Bypass
-local oldnamecall;
-oldnamecall = hookmetamethod(game, "__namecall", function(...)
-    local args = {...}
-    local namecallmethod = getnamecallmethod()
-    if (namecallmethod == "FireServer" and args[1] == "MainEvent" and table.find(flagged_remotes, args[2])) then
-        return
-    end
-    return oldnamecall(table.unpack(args))
-end)
-
--- // Sky Box
-Lighting.Sky:Destroy()
-local Sky = Instance.new("Sky")
-Sky.Name = "Sky"
-Sky.Parent = Lighting
-Sky.SkyboxBk = "http://www.roblox.com/asset/?id=393845394"
-Sky.SkyboxDn = "http://www.roblox.com/asset/?id=393845204"
-Sky.SkyboxFt = "http://www.roblox.com/asset/?id=393845629"
-Sky.SkyboxLf = "http://www.roblox.com/asset/?id=393845750"
-Sky.SkyboxRt = "http://www.roblox.com/asset/?id=393845533"
-Sky.SkyboxUp = "http://www.roblox.com/asset/?id=393845287"
 
 -- // Destroying the annoying ADs
 Workspace.ForwardPortal:Destroy()
@@ -85,5 +45,3 @@ end
 for _, v in pairs(Workspace.Ignored.ItemsDrop:GetChildren()) do
     v:Destroy()
 end
-
--- // Finishing later babes
