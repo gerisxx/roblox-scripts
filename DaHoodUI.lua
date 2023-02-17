@@ -1,6 +1,6 @@
 --[[
 
-    TBH i just wanted to remake the Da Hood UI and add some other features i would like when i play.
+    TBH i just wanted to remake the Da Hood UI and add some other features i would like when i play. (UI Scaling may be a little off due to the fact it was made on 3440x1440)
     Open-Source XD :3
 
 ]]--
