@@ -10,11 +10,23 @@ repeat wait() until game:IsLoaded()
 repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
 
 -- // Services
+local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
+local VirtualUser = game:GetService("VirtualUser")
 
 -- // Variables
+local LocalPlayer = Players.LocalPlayer
+
+-- // Libarys
 local NotificationLibary = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua", true))();
 local Notification = NotificationLibary.Notify
+
+-- // ANTI AFK
+LocalPlayer.Idled:Connect(function()
+    VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
+    task.wait(1)
+    VirtualUser:Button2Up(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
+end)
 
 -- // Flagged ANTI Cheat Remotes
 local flagged_remotes = {
