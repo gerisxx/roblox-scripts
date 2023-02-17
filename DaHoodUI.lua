@@ -1,6 +1,6 @@
 --[[
 
-    TBH i just wanted to fix and add some features da hood didnt have already
+    TBH i just wanted to fix and add some features da hood didnt have already.
     Open-Source XD :3
 
 ]]--
