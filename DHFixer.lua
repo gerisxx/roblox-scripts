@@ -3,8 +3,8 @@
     This script will stop annoying shit from breaking your macro
     
     Loadstring Version:
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/DHFixer.lua", true))();
     
-
 ]]--
 
 
