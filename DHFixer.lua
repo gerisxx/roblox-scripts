@@ -8,8 +8,8 @@
 ]]--
 
 -- // Await until game is fully loaded
-repeat wait() until game:IsLoaded()
-repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
 
 -- // Services
 local Workspace = game:GetService("Workspace")
