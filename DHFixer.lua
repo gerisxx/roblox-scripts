@@ -7,7 +7,6 @@
     
 ]]--
 
-
 -- // Await until game is fully loaded
 repeat wait() until game:IsLoaded()
 repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
