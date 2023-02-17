@@ -3,6 +3,15 @@
     TBH i just wanted to remake the Da Hood UI and add some other features i would like when i play. (UI Scaling may be a little off due to the fact it was made on 3440x1440)
     Open-Source XD :3
 
+    Loadstring Verision:
+
+    getgenv().EmoteKeybinds = {
+        ["Lay"] = Enum.KeyCode.X,
+        ["Greet"] = Enum.KeyCode.C,
+    }
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/DaHoodUI.lua", true))();
+
 ]]--
 
 -- // Keybind Settings
