@@ -12,6 +12,7 @@ repeat wait() until game:GetService("Workspace").Players:FindFirstChild(game:Get
 -- // Services
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
+local Lighting = game:GetService("Lighting")
 local VirtualUser = game:GetService("VirtualUser")
 
 -- // Variables
@@ -50,5 +51,18 @@ oldnamecall = hookmetamethod(game, "__namecall", function(...)
 end)
 
 -- // Sky Box
+Lighting.Sky:Destroy()
+local Sky = Instance.new("Sky")
+Sky.Name = "Sky"
+Sky.Parent = Lighting
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=393845394"
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=393845204"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=393845629"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=393845750"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=393845533"
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=393845287"
+
+-- // Destroying the annoying ads
+Workspace.ForwardPortal:Destroy()
 
 -- // Finishing later babes
