@@ -19,7 +19,7 @@ local LocalPlayer = Players.LocalPlayer
 -- // Check if game is loaded
 if not game:IsLoaded() then
     repeat
-        wait()
+        task.wait()
     until game:IsLoaded()
 end
 
@@ -38,7 +38,7 @@ local UI = Library.new("Monkey Tycoon UI | Halloween#0001", 5013109572)
 -- // Anti AFK
 LocalPlayer.Idled:Connect(function()
     VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
-    wait(1)
+    task.wait(1)
     VirtualUser:Button2Up(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
 end)
 
@@ -55,7 +55,7 @@ local Section4 = Page4:addSection("Settings")
 Section1:addToggle("Auto Purchase x1 Monkey", nil, function(boolen)
     getgenv().Auto_Purchase_X1 = boolen
     while Auto_Purchase_X1 do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.BuyDropper:FireServer(1)
     end
 end)
@@ -63,7 +63,7 @@ end)
 Section1:addToggle("Auto Purchase x5 Monkeys", nil, function(boolen)
     getgenv().Auto_Purchase_X5 = boolen
     while Auto_Purchase_X5 do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.BuyDropper:FireServer(5)
     end
 end)
@@ -75,7 +75,7 @@ end)
 Section1:addToggle("Auto Merge Monkeys", nil, function(boolen)
     getgenv().Auto_Merge_Monkeys = boolen
     while Auto_Merge_Monkeys do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.MergeDroppers:FireServer()
     end
 end)
@@ -83,7 +83,7 @@ end)
 Section2:addToggle("Auto Purchase Dropper Speed", nil, function(boolen)
     getgenv().Auto_Dropper_Speed = boolen
     while Auto_Dropper_Speed do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.BuySpeed:FireServer(1)
     end
 end)
@@ -91,7 +91,7 @@ end)
 Section3:addToggle("Auto Collect Bananas", nil, function(boolen)
     getgenv().Auto_Collect_Bananas = boolen
     while Auto_Collect_Bananas do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.GrabDrops:FireServer(tonumber(math.huge))
         for _, v in pairs(Workspace.Drops:GetChildren()) do
             v:Destroy()
@@ -102,7 +102,7 @@ end)
 Section3:addToggle("Auto Deposit Bananas", nil, function(boolen)
     getgenv().Auto_Deposit_Bananas = boolen
     while Auto_Deposit_Bananas do
-        wait()
+        task.wait()
         ReplicatedStorage.GTycoonClient.Remotes.DepositDrops:FireServer()
     end
 end)
