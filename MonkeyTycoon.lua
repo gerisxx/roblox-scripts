@@ -31,7 +31,7 @@ else
     getgenv().Loaded = true
 end
 
---// UI Libary Variables
+--// UI Libary
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local UI = Library.new("Monkey Tycoon UI | Halloween#0001", 5013109572)
 
