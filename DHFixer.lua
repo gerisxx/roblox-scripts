@@ -14,7 +14,6 @@ repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(gam
 -- // Services
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
-local Lighting = game:GetService("Lighting")
 local VirtualUser = game:GetService("VirtualUser")
 
 -- // Variables
