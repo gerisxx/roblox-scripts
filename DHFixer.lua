@@ -30,9 +30,6 @@ end)
 -- // Destroying the annoying ADs
 Workspace.ForwardPortal:Destroy()
 
--- // Destroying PepperSpray Affect
-Lighting.PepperSprayBlur:Destroy()
-
 -- // Disabling Seats
 for _, v in pairs(Workspace:GetDescendants()) do
     if v:IsA("Seat") then
