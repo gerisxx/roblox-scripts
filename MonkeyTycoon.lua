@@ -7,23 +7,23 @@
 
 ]]
 
---// Services
+-- // Services
 local VirtualUser = game:GetService("VirtualUser")
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
---// Variables
+-- // Variables
 local LocalPlayer = Players.LocalPlayer
 
---// Check if game is loaded
+-- // Check if game is loaded
 if not game:IsLoaded() then
     repeat
         wait()
     until game:IsLoaded()
 end
 
---// Check if already loaded
+-- // Check if already loaded
 if getgenv().Loaded then
     warn("Already Loaded.")
     return
@@ -31,18 +31,18 @@ else
     getgenv().Loaded = true
 end
 
---// UI Libary
+-- // UI Libary
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
 local UI = Library.new("Monkey Tycoon UI | Halloween#0001", 5013109572)
 
---// Anti AFK
+-- // Anti AFK
 LocalPlayer.Idled:Connect(function()
     VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
     wait(1)
     VirtualUser:Button2Up(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
 end)
 
---// UI Variables
+-- // UI Variables
 local Page1 = UI:addPage("Monkeys", 5012544693)
 local Page2 = UI:addPage("Dropper", 5012544693)
 local Page3 = UI:addPage("Bananas", 5012544693)
