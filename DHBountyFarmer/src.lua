@@ -157,9 +157,6 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                         ReplicatedStorage.MainEvent:FireServer("Stomp")
                                     until v.BodyEffects["Dead"].Value == true
                                     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
-                                    for _, v in pairs(v.Character:GetChildren()) do
-                                        v:Destroy()
-                                    end
                                 end
                             end
                         end
