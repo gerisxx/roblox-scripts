@@ -285,7 +285,7 @@ if UserID == getgenv().Settings.Attacker or table.find(getgenv().Settings.ALTs, 
     if UserID == getgenv().Settings.Attacker then
 
         task.wait(2) -- // Once again fixxing errors with wait times
-        setfpscap(60)
+        setfpscap(15)
 
     end
 
