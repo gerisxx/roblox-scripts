@@ -1,5 +1,4 @@
 --[[
-
     Commands: /start, /stop
     Loadstring Version: https://github.com/halloweevn/roblox-scripts/blob/main/DHBountyFarmer/loadstring.lua
     
@@ -8,7 +7,7 @@
 -- // IF YOU ARE USING THE SOURCE VERSION THEN REMOVE THE --[[ & ]]--
 
 --[[
-
+    
     getgenv().Settings = {
         ["Host"] = 12345, -- // Host ID (Account that inputs commands and collects stomps)
         ["Attacker"] = 12345, -- // Attacker ID (Account that kills all the ALTs)
@@ -164,6 +163,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                         ReplicatedStorage.MainEvent:FireServer("Stomp")
                                     until v.BodyEffects["Dead"].Value == true
                                     LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
+						            v:Destroy()
                                 end
                             end
                         end
@@ -285,7 +285,7 @@ if UserID == getgenv().Settings.Attacker or table.find(getgenv().Settings.ALTs, 
     if UserID == getgenv().Settings.Attacker then
 
         task.wait(2) -- // Once again fixxing errors with wait times
-        setfpscap(30)
+        setfpscap(60)
 
     end
 
@@ -297,18 +297,12 @@ if table.find(getgenv().Settings.ALTs, UserID) then
     -- // Setting FPS Cap
     setfpscap(tonumber(getgenv().Settings.FPS))
 
-    for _, v in pairs(Workspace.Players:GetChildren()) do
+    for _, v in pairs(Players:GetPlayers()) do
         if v ~= LocalPlayer and v.Name ~= AttackerName and v.Name ~= HostName then
             for _, v in pairs(v.Character:GetChildren()) do
                 v:Destroy()
             end
         end
     end
-
-    Workspace.Players.ChildAdded:Connect(function(Character)
-        if Character ~= LocalPlayer and Character.Name ~= AttackerName and Character.Name ~= HostName then
-            Character:Destroy()
-        end
-    end)
 
 end
