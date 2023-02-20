@@ -1,3 +1,9 @@
+--[[
+
+    Commands: /start, /stop
+    
+]]--
+
 getgenv().Settings = {
     ["Host"] = 12345, -- // Host ID (Account that inputs commands and collects stomps)
     ["Attacker"] = 12345, -- // Attacker ID (Account that kills all the ALTs)
