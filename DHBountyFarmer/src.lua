@@ -160,7 +160,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                 local Old_Position = nil
                                 if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
                                     Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
-                                    if Players:FindFirstChild(v.Name) then -- if still not work add Workspace.Players:FindFirstChild(v.Name)
+                                    if Players:FindFirstChild(v.Name) and Workspace.Players:FindFirstChild(v.Name) then
                                         repeat
                                             task.wait()
                                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
