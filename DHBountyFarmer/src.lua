@@ -54,6 +54,13 @@ local UserID = LocalPlayer.UserId
 local Name = LocalPlayer.Name
 local AttackerName, HostName = Players:GetNameFromUserIdAsync(tonumber(getgenv().Settings.Attacker)), Players:GetNameFromUserIdAsync(tonumber(getgenv().Settings.Host))
 
+-- // ANTI AFK
+LocalPlayer.Idled:Connect(function()
+    VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
+    task.wait(1)
+    VirtualUser:Button2Up(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
+end)
+
 -- // Checking if the account is inside of the Settings dictionary
 if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or table.find(getgenv().Settings.ALTs, UserID) then
 
