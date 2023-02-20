@@ -155,6 +155,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                     -- // Stomping/Bounty-Farming operation
                     task.spawn(function()
                         while DH_Bounty_Farm do
+                            repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
                             task.wait()
                             for _, v in pairs(Workspace.Players:GetChildren()) do
                                 local Old_Position = nil
@@ -172,31 +173,6 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                 end
                             end
                         end
-                    end)
-		    
-		    -- // Restarting loop on death
-                    LocalPlayer.CharacterAdded:Connect(function()
-                        repeat wait() until game.Workspace.Players:FindFirstChild(Name)
-                        task.spawn(function()
-                            while DH_Bounty_Farm do
-                                task.wait()
-                                for _, v in pairs(Workspace.Players:GetChildren()) do
-                                    local Old_Position = nil
-                                    if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
-                                        Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
-                                        if Players:FindFirstChild(v.Name) then
-                                            repeat
-                                                task.wait()
-                                                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
-                                                ReplicatedStorage.MainEvent:FireServer("Stomp")
-                                            until v.BodyEffects["Dead"].Value == true
-                                            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
-                                            v:Destroy()
-                                        end
-                                    end
-                                end
-                            end
-                        end)
                     end)
 
                 end
