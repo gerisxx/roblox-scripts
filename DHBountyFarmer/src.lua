@@ -20,7 +20,7 @@
             12345,
         },
     }
-    
+
 ]]--
 
 -- // Check if already loaded
@@ -290,12 +290,18 @@ if table.find(getgenv().Settings.ALTs, UserID) then
     -- // Setting FPS Cap
     setfpscap(tonumber(getgenv().Settings.FPS))
 
-    for _, v in pairs(Players:GetPlayers()) do
+    for _, v in pairs(Workspace.Players:GetChildren()) do
         if v ~= LocalPlayer and v.Name ~= AttackerName and v.Name ~= HostName then
             for _, v in pairs(v.Character:GetChildren()) do
                 v:Destroy()
             end
         end
     end
+
+    Workspace.Players.ChildAdded:Connect(function(Character)
+        if Character ~= LocalPlayer and Character.Name ~= AttackerName and Character.Name ~= HostName then
+            Character:Destroy()
+        end
+    end)
 
 end
