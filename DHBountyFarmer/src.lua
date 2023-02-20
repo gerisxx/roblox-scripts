@@ -72,7 +72,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
         for _, v in pairs(GroupService:GetGroupsAsync(UserID)) do
             table.insert(Groups, v.Id)
         end
-
+		
         if table.find(Groups, tonumber(getgenv().Settings.Crew_ID)) then
             
             game:GetService("ReplicatedStorage").MainEvent:FireServer("JoinCrew", getgenv().Settings.Crew_ID)
@@ -160,13 +160,15 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                 local Old_Position = nil
                                 if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
                                     Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
-                                    repeat
-                                        task.wait()
-                                        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
-                                        ReplicatedStorage.MainEvent:FireServer("Stomp")
-                                    until v.BodyEffects["Dead"].Value == true
-                                    LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
-                                    v:Destroy()
+                                    if Players:FindFirstChild(v.Name) then
+                                        repeat
+                                            task.wait()
+                                            LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
+                                            ReplicatedStorage.MainEvent:FireServer("Stomp")
+                                        until v.BodyEffects["Dead"].Value == true
+                                        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
+                                        v:Destroy()
+                                    end
                                 end
                             end
                         end
