@@ -155,7 +155,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                     -- // Stomping/Bounty-Farming operation
                     task.spawn(function()
                         while DH_Bounty_Farm do
-                            repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
+                            repeat task.wait() until Workspace.Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
                             task.wait()
                             for _, v in pairs(Workspace.Players:GetChildren()) do
                                 local Old_Position = nil
