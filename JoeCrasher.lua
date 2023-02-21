@@ -33,13 +33,21 @@ Notification({Title = "Joe Crasher", Description = "Loading...", Duration = 4})
 task.wait(4)
 
 -- // Playing annoying audio XD
-UserSettings().GameSettings.MasterVolume = 10
-local Audio = Instance.new("Sound", Workspace)
-Audio.SoundId = "rbxassetid://142376088"
-Audio.Volume = 10
-Audio.Name = "RAINING TACOSSSS"
-Audio.Looped = true
-Audio:Play()
+for _ = 1, 10 do
+    task.wait()
+    UserSettings().GameSettings.MasterVolume = 10
+    local Audio = Instance.new("Sound", Workspace)
+    Audio.SoundId = "rbxassetid://142376088"
+    Audio.Volume = 10
+    Audio.Name = "RAINING TACOSSSS"
+    Audio.Looped = true
+    Audio:Play()
+end
+
+task.spawn(function()
+    task.wait(14)
+    LocalPlayer:Kick("User BANNED")
+end)
 
 -- // Spamming a funny gif 🤭
 if (readfile and writefile) then
@@ -73,9 +81,3 @@ if (readfile and writefile) then
         end
     end)
 end
-
--- // Funny fake ban kick!!!
-task.spawn(function()
-    task.wait(12)
-    LocalPlayer:Kick("User BANNED")
-end)
