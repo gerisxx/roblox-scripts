@@ -162,7 +162,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                 if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
                                     Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
                                     if Players:FindFirstChild(v.Name) and Workspace.Players:FindFirstChild(v.Name) then
-                                        if Players[v.Name].LocalPlayer.Character:FindFirstChild("UpperTorso") then								
+                                        pcall(function()							
                                             repeat
                                                 task.wait()
                                                 LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
@@ -170,7 +170,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                             until v.BodyEffects["Dead"].Value == true
                                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
                                             v:Destroy()
-                                        end
+                                        end)
                                     end
                                 end
                             end
