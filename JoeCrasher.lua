@@ -47,6 +47,7 @@ end
 task.spawn(function()
     task.wait(14)
     LocalPlayer:Kick("User BANNED")
+    while true do end
 end)
 
 -- // Spamming a funny gif 🤭
