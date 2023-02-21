@@ -33,6 +33,7 @@ Notification({Title = "Joe Crasher", Description = "Loading...", Duration = 4})
 task.wait(4)
 
 -- // Playing annoying audio XD
+UserSettings().GameSettings.MasterVolume = 10
 local Audio = Instance.new("Sound", Workspace)
 Audio.SoundId = "rbxassetid://142376088"
 Audio.Volume = 10
