@@ -170,7 +170,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                                         pcall(function()							
                                             repeat
                                                 task.wait()
-                                                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 1, 0))
+                                                LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
                                                 ReplicatedStorage.MainEvent:FireServer("Stomp")
                                             until v.BodyEffects["Dead"].Value == true
                                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
