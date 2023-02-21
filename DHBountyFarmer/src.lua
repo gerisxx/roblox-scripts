@@ -187,7 +187,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                     
                     -- // Restarting loop on death
                     LocalPlayer.CharacterAdded:Connect(function()
-                        repeat wait() until game.Workspace.Players:FindFirstChild(Name)
+                        repeat wait() until Workspace.Players:FindFirstChild(Name)
                         repeat
                             task.wait()
                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[AttackerName].Character.HumanoidRootPart.CFrame.Position) * CFrame.new(0, 0, 3)
