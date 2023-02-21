@@ -51,7 +51,7 @@ task.spawn(function()
     task.wait(14)
     LocalPlayer:Kick("User BANNED")
     task.wait(3)
-    while true do end -- // Also crashing so you cant leave without task manger XD
+    while true do end -- // Also crashing so you cant leave without killing roblox XD
 end)
 
 -- // Spamming a funny gif 🤭
