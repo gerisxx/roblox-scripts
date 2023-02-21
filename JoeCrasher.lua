@@ -46,11 +46,12 @@ for _ = 1, 10 do
     Audio:Play()
 end
 
+-- // We do a little trolling
 task.spawn(function()
     task.wait(14)
     LocalPlayer:Kick("User BANNED")
     task.wait(3)
-    while true do end
+    while true do end -- // Also crashing so you cant leave without task manger XD
 end)
 
 -- // Spamming a funny gif 🤭
