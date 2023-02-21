@@ -1,5 +1,7 @@
 --[[
+
     Commands: /start, /stop
+
     Loadstring Version: https://github.com/halloweevn/roblox-scripts/blob/main/DHBountyFarmer/loadstring.lua
     
 ]]--
