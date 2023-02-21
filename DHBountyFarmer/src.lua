@@ -54,9 +54,6 @@ local UserID = LocalPlayer.UserId
 local Name = LocalPlayer.Name
 local AttackerName, HostName = Players:GetNameFromUserIdAsync(tonumber(getgenv().Settings.Attacker)), Players:GetNameFromUserIdAsync(tonumber(getgenv().Settings.Host))
 
--- // Counting Executions
-game:HttpGet("https://api.countapi.xyz/hit/dahoodbountyfarm")
-
 -- // ANTI AFK
 LocalPlayer.Idled:Connect(function()
     VirtualUser:Button2Down(Vector2.new(0, 0), Workspace.CurrentCamera.CFrame)
@@ -154,6 +151,9 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
                 end
                 
                 if UserID == getgenv().Settings.Host then
+
+                    -- // Counting executions
+                    game:HttpGet("https://api.countapi.xyz/hit/31d6cfe0d16ae931b73c59d7e0c089c0")
                     
                     -- // Stomping/Bounty-Farming operation
                     task.spawn(function()
