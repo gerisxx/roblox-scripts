@@ -1,7 +1,7 @@
 --[[
   
   Redeems every code Da Hood ever made
-  Loadstring Version: 
+  Loadstring Version: loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/DHCodeRedeemer.lua", true))();
 
 ]]--
 
