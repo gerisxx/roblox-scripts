@@ -25,5 +25,5 @@ local Codes = loadstring(game:HttpGet("https://raw.githubusercontent.com/hallowe
 
 -- // Redeem every code in the game
 for _, v in pairs(Codes) do
-    ReplicatedStorage.MainEvent:FireServer("EnterPromoCode", Codes)
+    ReplicatedStorage.MainEvent:FireServer("EnterPromoCode", v)
 end
