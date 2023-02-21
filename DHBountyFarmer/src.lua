@@ -77,7 +77,7 @@ if UserID == getgenv().Settings.Host or UserID == getgenv().Settings.Attacker or
 		
         if table.find(Groups, tonumber(getgenv().Settings.Crew_ID)) then
             
-            game:GetService("ReplicatedStorage").MainEvent:FireServer("JoinCrew", getgenv().Settings.Crew_ID)
+            ReplicatedStorage.MainEvent:FireServer("JoinCrew", getgenv().Settings.Crew_ID)
             task.wait(1)
             LocalPlayer.PlayerGui.MainScreenGui.Crew.CrewFrame.Visible = false
 
