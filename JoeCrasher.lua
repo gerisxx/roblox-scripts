@@ -2,7 +2,7 @@
 
     BEST DA HOOD CRASHER EVER JOE CRASHER 10/10!!
 
-    Loadstring version: loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/edit/main/JoeCrasher.lua", true))();
+    Loadstring version: loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/JoeCrasher.lua", true))();
 
 ]]--
 
