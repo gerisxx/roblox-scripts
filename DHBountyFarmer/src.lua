@@ -243,6 +243,7 @@ if table.find(Accounts, UserID) then
                                                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[v.Name].Character.UpperTorso.Position + Vector3.new(0, 2, 0))
                                                             ReplicatedStorage.MainEvent:FireServer("Stomp")
                                                         until v.BodyEffects["Dead"].Value == true or not DH_Bounty_Farm
+                                                        DH_Bounty_Farm_Stomps = DH_Bounty_Farm_Stomps + 1
                                                         LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Old_Position)
                                                         v:Destroy() -- // Destroying player when dead to stop there body from getting in the way
                                                     end)
@@ -488,7 +489,7 @@ if table.find(Accounts, UserID) then
                             local script = Instance.new('LocalScript', AmountOfStompsText)
 
                             while task.wait() do
-                                script.Parent.Text = "Amount of stomps: " .. getgenv().DH_Bounty_Farm_Stomps
+                                script.Parent.Text = "Amount of stomps: " .. DH_Bounty_Farm_Stomps
                             end
                         end
                         coroutine.wrap(EQLDGG_fake_script)()
