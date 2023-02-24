@@ -110,7 +110,7 @@ StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .
 repeat task.wait() until Players:FindFirstChild(HostName)
 StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .. AttackerName .. " joins the game.", Duration = 10 })
 repeat task.wait() until Players:FindFirstChild(AttackerName)
-StarterGui:SetCore("SendNotification", { Title = "!", Text = "Bounty Farmer has been loaded.", Duration = 3 })
+StarterGui:SetCore("SendNotification", { Title = "!", Text = "Bounty Farmer has been loaded.", Duration = 10 })
 
 -- // Checking if the account is inside of the Settings dictionary
 if table.find(Accounts, UserID) then
@@ -159,6 +159,11 @@ if table.find(Accounts, UserID) then
             return
             
         end
+        
+    else
+
+        ReplicatedStorage.MainEvent:FireServer("LeaveCrew")
+
     end
 
     -- // ANTI Cheat bypass
@@ -206,7 +211,8 @@ if table.find(Accounts, UserID) then
                                 task.wait()
                                 for _, v in pairs(Workspace.Players:GetChildren()) do
                                     local Old_Position = nil
-                                    if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
+                                    local TargetID = Players:GetUserIdFromNameAsync(v.Name)
+                                    if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false and table.find(getgenv().Settings.ALTSettings.ALTs, TargetID) then
                                         Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
                                         if Players:FindFirstChild(v.Name) and Workspace.Players:FindFirstChild(v.Name) then
                                             pcall(function()
@@ -234,7 +240,8 @@ if table.find(Accounts, UserID) then
                                         task.wait()
                                         for _, v in pairs(Workspace.Players:GetChildren()) do
                                             local Old_Position = nil
-                                            if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false then
+                                            local TargetID = Players:GetUserIdFromNameAsync(v.Name)
+                                            if v.BodyEffects["K.O"].Value == true and v.BodyEffects["Grabbed"].Value == nil and v.BodyEffects["Dead"].Value == false and table.find(getgenv().Settings.ALTSettings.ALTs, TargetID) then
                                                 Old_Position = LocalPlayer.Character.HumanoidRootPart.CFrame.Position
                                                 if Players:FindFirstChild(v.Name) and Workspace.Players:FindFirstChild(v.Name) then
                                                     pcall(function()
@@ -318,7 +325,7 @@ if table.find(Accounts, UserID) then
                         repeat
                             task.wait()
                             LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[AttackerName].Character.HumanoidRootPart.CFrame.Position) * CFrame.new(0, 0, 3)
-                        until Workspace.Players:FindFirstChild(Name).BodyEffects["Dead"].Value == true
+                        until Workspace.Players:FindFirstChild(Name).BodyEffects["Dead"].Value == true or not DH_Bounty_Farm
                         
                         -- // Restarting loop on death
                         LocalPlayer.CharacterAdded:Connect(function()
@@ -326,7 +333,7 @@ if table.find(Accounts, UserID) then
                             repeat
                                 task.wait()
                                 LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Players[AttackerName].Character.HumanoidRootPart.CFrame.Position) * CFrame.new(0, 0, 3)
-                            until Workspace.Players:FindFirstChild(Name).BodyEffects["Dead"].Value == true
+                            until Workspace.Players:FindFirstChild(Name).BodyEffects["Dead"].Value == true or not DH_Bounty_Farm
                         end)
                     end
                 end
@@ -487,9 +494,18 @@ if table.find(Accounts, UserID) then
                         coroutine.wrap(CTHGMF_fake_script)()
                         local function EQLDGG_fake_script()
                             local script = Instance.new('LocalScript', AmountOfStompsText)
-
+                            function CommaValue(Amount)
+                                local Formatted = Amount
+                                while true do  
+                                    Formatted, k = string.gsub(Formatted, "^(-?%d+)(%d%d%d)", "%1,%2")
+                                    if (k == 0) then
+                                        break
+                                    end
+                                end
+                                return Formatted
+                            end
                             while task.wait() do
-                                script.Parent.Text = "Amount of stomps: " .. DH_Bounty_Farm_Stomps
+                                script.Parent.Text = "Amount of stomps: " .. CommaValue(DH_Bounty_Farm_Stomps)
                             end
                         end
                         coroutine.wrap(EQLDGG_fake_script)()
