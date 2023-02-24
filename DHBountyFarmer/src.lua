@@ -106,9 +106,9 @@ for _, v in ipairs(Accounts) do
 end
 
 -- // Awaiting until Host + Attacker has joined the game
-StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .. HostName .. " joins the game.", Duration = 3 })
+StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .. HostName .. " joins the game.", Duration = 10 })
 repeat task.wait() until Players:FindFirstChild(HostName)
-StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .. AttackerName .. " joins the game.", Duration = 3 })
+StarterGui:SetCore("SendNotification", { Title = "*", Text = "Awaiting until " .. AttackerName .. " joins the game.", Duration = 10 })
 repeat task.wait() until Players:FindFirstChild(AttackerName)
 StarterGui:SetCore("SendNotification", { Title = "!", Text = "Bounty Farmer has been loaded.", Duration = 3 })
 
