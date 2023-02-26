@@ -262,20 +262,6 @@ if table.find(Accounts, UserID) then
                             end)
                         end)
 
-                        -- // Resetting player every 10 mins to stop bugs
-                        task.spawn(function()
-                            while DH_Bounty_Farm do
-                                task.wait(600)
-                                StarterGui:SetCore("SendNotification", { Title = "#", Text = "Your character will force-reset in 3 seconds to fix bugs.", Duration = 3 })
-                                task.wait(3)
-                                for _, v in pairs(LocalPlayer.Character:GetDescendants()) do
-                                    if v:IsA("BasePart") then
-                                        v:Destroy()
-                                    end
-                                end
-                            end
-                        end)
-
                         -- // Kicking host after so long to prevent data not saving
                         task.spawn(function()
                             if getgenv().Settings.HostSettings.KickAfter ~= nil then
