@@ -44,6 +44,6 @@ TextHolder2.BackgroundTransparency = 1.000
 TextHolder2.Position = UDim2.new(0.429319382, 0, 0.59508723, 0)
 TextHolder2.Size = UDim2.new(0.141070396, 0, 0.0784469098, 0)
 TextHolder2.Font = Enum.Font.GothamBlack
-TextHolder2.Text = "Please rejoin and re execute with a supported executor."
+TextHolder2.Text = "Please rejoin and re-execute with a supported executor."
 TextHolder2.TextColor3 = Color3.fromRGB(203, 203, 203)
 TextHolder2.TextSize = 26.000
