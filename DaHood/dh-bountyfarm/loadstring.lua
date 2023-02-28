@@ -31,4 +31,4 @@ getgenv().Settings = {
     },
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/DHBountyFarm/src.lua", true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/dh-bountyfarm/src.lua", true))();
