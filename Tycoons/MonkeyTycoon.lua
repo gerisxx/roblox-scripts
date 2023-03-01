@@ -2,7 +2,7 @@
 
     I made this because i wanted a working monkey tycoon script. (most are broken xd)
 
-    Loadstring version: loadstring(game:HttpGet("https://raw.githubusercontent.com/halloweevn/roblox-scripts/main/MonkeyTycoon.lua", true))();
+    Loadstring version: loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/Tycoons/MonkeyTycoon.lua", true))();
 
 ]]
 
