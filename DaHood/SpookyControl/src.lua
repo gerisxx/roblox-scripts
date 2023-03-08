@@ -84,7 +84,7 @@ end)
 -- // Chat commands
 ReplicatedStorage.DefaultChatSystemChatEvents.OnMessageDoneFiltering.OnClientEvent:Connect(function(Chatted)
     local args = string.split(string.lower(Chatted.Message), " ")
-    if game.Players[Command.FromSpeaker].UserId == Host then
+    if game.Players[Chatted.FromSpeaker].UserId == Host then
 
         if args[1] == Prefix .. "drop" then
 
