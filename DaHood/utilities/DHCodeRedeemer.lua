@@ -21,7 +21,7 @@ end
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- // Variables
-local Codes = loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/SpookyControl/resources/codes.lua))()
+local Codes = loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/SpookyControl/resources/codes.lua"))()
 
 -- // Redeem every code in the game
 for _, v in pairs(Codes) do
