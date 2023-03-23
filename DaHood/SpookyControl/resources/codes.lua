@@ -1,6 +1,7 @@
 -- THIS WILL PROBABLY NOT BE UPDATED NO MORE
 
 local Codes = {
+  "2BVISTS",
   "1MLIKES",
   "@DAHOOD",
   "militarybase",
