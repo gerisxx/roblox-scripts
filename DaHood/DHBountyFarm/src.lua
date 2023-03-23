@@ -403,7 +403,7 @@ if table.find(Accounts, UserID) then
                         CreatorText.Position = UDim2.new(0.428050041, 0, 0.436842084, 0)
                         CreatorText.Size = UDim2.new(0.143378526, 0, 0.0631579012, 0)
                         CreatorText.Font = Enum.Font.GothamBlack
-                        CreatorText.Text = "Halloween#0002"
+                        CreatorText.Text = "seth.#0001"
                         CreatorText.TextColor3 = Color3.fromRGB(148, 148, 148)
                         CreatorText.TextSize = 22.000
                         CPUText.Name = "CPUText"
