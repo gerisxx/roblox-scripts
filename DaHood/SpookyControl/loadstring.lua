@@ -12,4 +12,4 @@ getgenv().Alts = { --// Max is 38
     Alt3 = 12345,
 }
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/spooky-source/src.lua", true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/socialsuicide/roblox-scripts/main/DaHood/SpookyControl/src.lua", true))();
