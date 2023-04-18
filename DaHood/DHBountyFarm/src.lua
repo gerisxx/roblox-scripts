@@ -57,6 +57,8 @@ end
 repeat task.wait() until game:IsLoaded()
 repeat task.wait() until game:GetService("Workspace").Players:FindFirstChild(game:GetService("Players").LocalPlayer.Name)
 
+StarterGui:SetCore("SendNotification", { Title = "[!]", Text = "Bounty farm will be discontinued and deleted by 5/1/23, if you would like to continue using this please save the src!", Duration = 10 })
+
 -- // Services
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
